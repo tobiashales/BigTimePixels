@@ -9,7 +9,7 @@ body {
 }
 
 :root {
-  --btp-viewport-height: 100dvh;
+  --btp-viewport-height: 100lvh;
 }
 
 body {
@@ -472,7 +472,9 @@ a {
       radial-gradient(circle at 88% 20%, rgba(45, 80, 90, .7), rgba(45, 80, 90, 0) 34%),
       radial-gradient(circle at 50% 86%, rgba(21, 62, 30, .8), rgba(21, 62, 30, 0) 36%),
       #000;
-    height: 100dvh;
+    height: 100vh;
+    height: 100lvh;
+    height: var(--btp-viewport-height);
     inset: 0;
     overflow: hidden;
     position: fixed;
@@ -480,7 +482,9 @@ a {
   }
 
   .site-header:has(.mobile-menu[open]) .header-inner {
-    height: 100dvh;
+    height: 100vh;
+    height: 100lvh;
+    height: var(--btp-viewport-height);
     width: 100%;
   }
 
@@ -508,7 +512,9 @@ a {
       radial-gradient(circle at 50% 86%, rgba(21, 62, 30, .8), rgba(21, 62, 30, 0) 36%),
       #000;
     display: flex;
-    height: 100dvh;
+    height: 100vh;
+    height: 100lvh;
+    height: var(--btp-viewport-height);
     inset: 0;
     justify-content: center;
     overflow: hidden;
@@ -550,8 +556,7 @@ a {
     height: auto;
     min-width: 0;
     min-height: 100vh;
-    min-height: 100svh;
-    min-height: 100dvh;
+    min-height: 100lvh;
     min-height: var(--btp-viewport-height);
     background-size: cover;
     display: flex;
@@ -563,8 +568,7 @@ a {
     max-width: 430px;
     height: auto;
     min-height: 100vh;
-    min-height: 100svh;
-    min-height: 100dvh;
+    min-height: 100lvh;
     min-height: var(--btp-viewport-height);
     margin: 0 auto;
     display: flex;
@@ -751,7 +755,7 @@ a {
   }
 }
 
-@media (max-width: 360px), (max-width: 979px) and (max-height: 700px) {
+@media (max-width: 360px) {
   .section-content,
   .short-content {
     padding: 24px 20px 30px;
