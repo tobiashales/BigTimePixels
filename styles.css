@@ -1,0 +1,375 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  min-width: 980px;
+  background: #000;
+  color: #fff;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  overflow-x: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-header {
+  height: 89px;
+  min-width: 980px;
+  background: #000;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+}
+
+.header-inner {
+  width: 980px;
+  height: 89px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.header-logo {
+  position: absolute;
+  left: 449px;
+  top: 3px;
+  width: 82px;
+  height: 82px;
+  object-fit: contain;
+}
+
+.main-nav {
+  position: absolute;
+  left: 206px;
+  top: 19px;
+  width: 720px;
+  height: 50px;
+  font-size: 16px;
+  line-height: 1.75;
+  font-weight: 700;
+}
+
+.main-nav a {
+  position: absolute;
+  top: 0;
+  padding: 5px 10px;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.main-nav a:hover {
+  color: #e3e3e3;
+}
+
+.nav-home {
+  left: 0;
+}
+
+.nav-privacy {
+  left: 470px;
+}
+
+.product-section {
+  min-width: 980px;
+  height: 643px;
+  background-color: #000;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.short-section {
+  height: 599px;
+}
+
+.tall-section {
+  height: 685px;
+}
+
+.section-content {
+  width: max(980px, calc(100% - 380px));
+  height: 542px;
+  margin: 57px auto 44px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.short-content {
+  margin-top: 28px;
+  margin-bottom: 29px;
+}
+
+.product-column {
+  position: relative;
+  min-height: 542px;
+}
+
+.product-title {
+  position: absolute;
+  left: 29px;
+  top: 39px;
+  width: 454px;
+  margin: 0;
+  color: #fff;
+  font-size: 48px;
+  line-height: 1.4;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0;
+}
+
+.app-icon {
+  position: absolute;
+  left: 178px;
+  top: 161px;
+  width: 156px;
+  height: 156px;
+  object-fit: cover;
+}
+
+.store-link {
+  position: absolute;
+  left: 187px;
+  top: 371px;
+  display: block;
+  width: 137px;
+  height: 41px;
+}
+
+.store-badge {
+  width: 137px;
+  height: 41px;
+  display: block;
+  object-fit: fill;
+}
+
+.copy-heading {
+  position: absolute;
+  top: 69px;
+  left: calc((100% - 490px) * .5 + 53px);
+  width: 383px;
+  margin: 0;
+  color: #fff;
+  font-size: 24px;
+  line-height: 1.4;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0;
+}
+
+.copy-body {
+  position: absolute;
+  top: 165px;
+  left: calc((100% - 490px) * .5 + 56px);
+  width: 378px;
+  margin: 0;
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.75;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0;
+}
+
+.copy-body p {
+  margin: 0 0 28px;
+}
+
+.llama-copy .copy-body {
+  top: 165px;
+}
+
+.gradient-color-contacts {
+  background-image:
+    radial-gradient(circle at 94.35384114583333% 89.61588541666666%, #292929 0%, 17.6%, rgba(41, 41, 41, 0) 40%),
+    radial-gradient(circle at 6.503906249999999% 88.037109375%, rgba(0, 0, 0, .99) 0%, 25%, rgba(0, 0, 0, 0) 50%),
+    radial-gradient(circle at 7.353566487630209% 14.396260579427084%, #292929 0%, 42%, rgba(41, 41, 41, 0) 70%),
+    radial-gradient(circle at 93.6865234375% 11.42578125%, #000 0%, 42%, rgba(0, 0, 0, 0) 70%),
+    radial-gradient(circle at 48.9013671875% 49.521484375%, #000 0%, 100%, rgba(0, 0, 0, 0) 100%);
+}
+
+.gradient-hop-slide {
+  background-image:
+    radial-gradient(circle at 91.81543986002603% 88.98539225260417%, #000 0%, 20%, rgba(0, 0, 0, 0) 40%),
+    radial-gradient(circle at 3.4075927734374996% 87.3773701985677%, rgba(21, 62, 30, .99) 0%, 25%, rgba(21, 62, 30, 0) 50%),
+    radial-gradient(circle at 6.165364583333333% 12.617187499999998%, #000 0%, 42%, rgba(0, 0, 0, 0) 70%),
+    radial-gradient(circle at 93.6865234375% 11.42578125%, #4f1717 0%, 42%, rgba(79, 23, 23, 0) 70%),
+    radial-gradient(circle at 48.9013671875% 49.521484375%, #000 0%, 100%, rgba(0, 0, 0, 0) 100%);
+}
+
+.gradient-debris-dodge {
+  background-image:
+    radial-gradient(circle at 8.443806966145834% 14.350179036458332%, #3f0000 0%, 20%, rgba(63, 0, 0, 0) 40%),
+    radial-gradient(circle at 6.503906249999999% 88.037109375%, rgba(0, 0, 0, .99) 0%, 25%, rgba(0, 0, 0, 0) 50%),
+    radial-gradient(circle at 92.5635274251302% 86.3580830891927%, #4e402b 0%, 42%, rgba(78, 64, 43, 0) 70%),
+    radial-gradient(circle at 93.6865234375% 11.42578125%, #000 0%, 42%, rgba(0, 0, 0, 0) 70%),
+    radial-gradient(circle at 48.9013671875% 49.521484375%, #000 0%, 100%, rgba(0, 0, 0, 0) 100%);
+}
+
+.gradient-unicorn-slayer {
+  background-image:
+    radial-gradient(circle at 86.47898356119792% 83.30174763997395%, #000 0%, 20%, rgba(0, 0, 0, 0) 40%),
+    radial-gradient(circle at 85.46666463216145% 18.917287190755207%, rgba(62, 9, 5, .99) 0%, 26.5%, rgba(62, 9, 5, 0) 53%),
+    radial-gradient(circle at 12.308197021484375% 88.47803751627605%, #090160 0%, 27.6%, rgba(9, 1, 96, 0) 46%),
+    radial-gradient(circle at 11.1236572265625% 17.950286865234375%, #000 0%, 42%, rgba(0, 0, 0, 0) 70%),
+    radial-gradient(circle at 48.9013671875% 49.521484375%, #000 0%, 100%, rgba(0, 0, 0, 0) 100%);
+}
+
+.gradient-rude-llama {
+  background-image:
+    radial-gradient(circle at 94.35384114583333% 89.61588541666666%, #42302f 0%, 20%, rgba(66, 48, 47, 0) 40%),
+    radial-gradient(circle at 6.503906249999999% 88.037109375%, rgba(0, 0, 0, .99) 0%, 25%, rgba(0, 0, 0, 0) 50%),
+    radial-gradient(circle at 6.165364583333333% 12.617187499999998%, #3e0905 0%, 42%, rgba(62, 9, 5, 0) 70%),
+    radial-gradient(circle at 93.6865234375% 11.42578125%, #000 0%, 42%, rgba(0, 0, 0, 0) 70%),
+    radial-gradient(circle at 48.9013671875% 49.521484375%, #000 0%, 100%, rgba(0, 0, 0, 0) 100%);
+}
+
+.privacy-page {
+  min-height: 1842px;
+  min-width: 980px;
+  background-image:
+    radial-gradient(circle at 48.84765625% 84.71282958984375%, #153e1e 0%, 17.5%, rgba(21, 62, 30, 0) 35%),
+    radial-gradient(circle at 48.80427042643229% 12.044855753580729%, #3e0905 0%, 17.5%, rgba(62, 9, 5, 0) 35%),
+    radial-gradient(circle at 94.49142456054688% 88.12215169270833%, #2d505a 0%, 17.6%, rgba(45, 80, 90, 0) 40%),
+    radial-gradient(circle at 6.503906249999999% 88.037109375%, rgba(97, 28, 78, .99) 0%, 25%, rgba(97, 28, 78, 0) 50%),
+    radial-gradient(circle at 7.353566487630209% 14.396260579427084%, #153e1e 0%, 42%, rgba(21, 62, 30, 0) 70%),
+    radial-gradient(circle at 93.6865234375% 11.42578125%, #070050 0%, 42%, rgba(7, 0, 80, 0) 70%),
+    radial-gradient(circle at 48.9013671875% 49.521484375%, #000 0%, 100%, rgba(0, 0, 0, 0) 100%);
+  background-size: cover;
+  overflow: hidden;
+}
+
+.privacy-wrap {
+  width: 756px;
+  margin-left: calc((100% - 980px) * .5 + 106px);
+  padding-top: 126px;
+  padding-bottom: 80px;
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.75;
+  font-weight: 400;
+}
+
+.privacy-wrap h1 {
+  margin: 0 0 -7px;
+  font-size: 44px;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+.privacy-wrap h2 {
+  margin: 28px 0 0;
+  font-size: 16px;
+  line-height: 1.75;
+  font-weight: 700;
+}
+
+.privacy-wrap p {
+  margin: 0;
+}
+
+.privacy-wrap .effective-date {
+  margin-bottom: 30px;
+}
+
+.privacy-wrap ul {
+  margin: 0;
+  padding-left: 26px;
+}
+
+.privacy-wrap li {
+  margin: 0;
+  line-height: 1.75;
+}
+
+.privacy-wrap p + p,
+.privacy-wrap ul + p {
+  margin-top: 28px;
+}
+
+.privacy-wrap h2 + p {
+  margin-top: 0;
+}
+
+.site-footer {
+  height: 234px;
+  min-width: 980px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #000;
+  color: #fff;
+  position: relative;
+}
+
+.footer-column {
+  position: relative;
+  min-height: 234px;
+}
+
+.footer-logo {
+  position: absolute;
+  left: 67px;
+  top: 58px;
+  width: 39px;
+  height: 41px;
+  object-fit: contain;
+}
+
+.footer-name {
+  position: absolute;
+  left: 115px;
+  top: 66px;
+  width: 258px;
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.footer-phone,
+.footer-email,
+.footer-right p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.75;
+  font-weight: 600;
+}
+
+.footer-phone {
+  position: absolute;
+  left: 84px;
+  top: 145px;
+}
+
+.footer-email {
+  position: absolute;
+  left: 85px;
+  top: 178px;
+}
+
+.footer-right p {
+  position: absolute;
+  right: 115px;
+  top: 177px;
+  width: 490px;
+  text-align: right;
+}
+
+@media (max-width: 979px) {
+  body,
+  .site-header,
+  .product-section,
+  .privacy-page,
+  .site-footer {
+    min-width: 980px;
+  }
+}
