@@ -79,6 +79,10 @@ a {
   left: 470px;
 }
 
+.mobile-menu {
+  display: none;
+}
+
 .product-section {
   min-width: 980px;
   height: 643px;
@@ -370,43 +374,165 @@ a {
     overflow-x: hidden;
   }
 
+  body:has(.mobile-menu[open]) {
+    overflow: hidden;
+  }
+
   .site-header {
-    height: 112px;
+    height: 74px;
     min-width: 0;
   }
 
   .header-inner {
     width: 100%;
-    height: 112px;
+    height: 74px;
+  }
+
+  .logo-link {
+    position: absolute;
+    left: 18px;
+    top: 12px;
+    z-index: 1002;
   }
 
   .header-logo {
-    left: 50%;
-    top: 9px;
-    width: 58px;
-    height: 58px;
-    transform: translateX(-50%);
+    position: static;
+    width: 50px;
+    height: 50px;
+    transform: none;
   }
 
   .main-nav {
-    left: 0;
-    top: 67px;
-    width: 100%;
-    height: 44px;
-    display: flex;
-    justify-content: center;
-    gap: clamp(30px, 12vw, 76px);
-    padding: 0 18px;
-    font-size: 14px;
-    line-height: 1.35;
+    display: none;
   }
 
-  .main-nav a {
-    position: static;
-    min-height: 44px;
-    display: inline-flex;
+  .mobile-menu {
+    display: block;
+    position: absolute;
+    right: 16px;
+    top: 11px;
+    z-index: 1003;
+  }
+
+  .mobile-menu-toggle {
     align-items: center;
-    padding: 8px 4px;
+    cursor: pointer;
+    display: flex;
+    height: 52px;
+    justify-content: center;
+    list-style: none;
+    width: 52px;
+  }
+
+  .mobile-menu-toggle::-webkit-details-marker {
+    display: none;
+  }
+
+  .mobile-menu-toggle::marker {
+    content: "";
+  }
+
+  .mobile-menu-toggle span {
+    color: #fff;
+    display: block;
+    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-size: 54px;
+    font-weight: 300;
+    line-height: .72;
+    transform-origin: center;
+    transition: transform .18s ease;
+  }
+
+  .mobile-menu[open] .mobile-menu-toggle span {
+    transform: rotate(45deg);
+  }
+
+  .mobile-menu-panel {
+    display: none;
+  }
+
+  .mobile-nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .site-header:has(.mobile-menu[open]) {
+    background:
+      radial-gradient(circle at 14% 18%, rgba(97, 28, 78, .75), rgba(97, 28, 78, 0) 34%),
+      radial-gradient(circle at 88% 20%, rgba(45, 80, 90, .7), rgba(45, 80, 90, 0) 34%),
+      radial-gradient(circle at 50% 86%, rgba(21, 62, 30, .8), rgba(21, 62, 30, 0) 36%),
+      #000;
+    height: 100dvh;
+    inset: 0;
+    overflow: hidden;
+    position: fixed;
+    z-index: 1000;
+  }
+
+  .site-header:has(.mobile-menu[open]) .header-inner {
+    height: 100dvh;
+    width: 100%;
+  }
+
+  .site-header:has(.mobile-menu[open]) .logo-link {
+    left: 18px;
+    top: calc(env(safe-area-inset-top, 0px) + 12px);
+  }
+
+  .mobile-menu[open] {
+    position: static;
+  }
+
+  .mobile-menu[open] .mobile-menu-toggle {
+    position: fixed;
+    right: 16px;
+    top: calc(env(safe-area-inset-top, 0px) + 11px);
+    z-index: 1004;
+  }
+
+  .mobile-menu[open] .mobile-menu-panel {
+    align-items: center;
+    background:
+      radial-gradient(circle at 14% 18%, rgba(97, 28, 78, .75), rgba(97, 28, 78, 0) 34%),
+      radial-gradient(circle at 88% 20%, rgba(45, 80, 90, .7), rgba(45, 80, 90, 0) 34%),
+      radial-gradient(circle at 50% 86%, rgba(21, 62, 30, .8), rgba(21, 62, 30, 0) 36%),
+      #000;
+    display: flex;
+    height: 100dvh;
+    inset: 0;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0 30px;
+    position: fixed;
+    width: 100vw;
+    z-index: 1001;
+  }
+
+  .mobile-menu[open] .mobile-nav-list {
+    display: grid;
+    gap: clamp(36px, 8vh, 68px);
+    justify-items: center;
+    width: 100%;
+  }
+
+  .mobile-nav-link {
+    color: #fff;
+    display: inline-flex;
+    font-size: clamp(30px, 9vw, 42px);
+    font-weight: 700;
+    line-height: 1.12;
+    min-height: 48px;
+    text-align: center;
+    text-shadow: 0 0 18px rgba(255, 255, 255, .16);
+  }
+
+  .mobile-nav-link.active {
+    color: #fff;
+    text-decoration: underline;
+    text-decoration-color: rgba(255, 255, 255, .45);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 9px;
   }
 
   .product-section,
@@ -414,8 +540,9 @@ a {
   .tall-section {
     height: auto;
     min-width: 0;
-    min-height: 0;
+    min-height: calc(100svh - 74px);
     background-size: cover;
+    display: flex;
   }
 
   .section-content,
@@ -423,11 +550,13 @@ a {
     width: 100%;
     max-width: 430px;
     height: auto;
+    min-height: calc(100svh - 74px);
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 46px 24px 56px;
+    justify-content: center;
+    padding: 38px 24px 44px;
   }
 
   .product-column {
@@ -459,21 +588,21 @@ a {
   .product-title {
     width: 100%;
     max-width: 342px;
-    margin: 0 auto 24px;
+    margin: 0 auto 22px;
     font-size: clamp(34px, 9vw, 42px);
     line-height: 1.16;
   }
 
   .app-icon {
-    width: 136px;
-    height: 136px;
-    margin: 0 auto 22px;
+    width: 132px;
+    height: 132px;
+    margin: 0 auto 20px;
   }
 
   .store-link {
     width: 160px;
     height: 48px;
-    margin: 0 auto 34px;
+    margin: 0 auto 32px;
   }
 
   .store-badge {
@@ -484,7 +613,7 @@ a {
   .copy-heading {
     width: 100%;
     max-width: 342px;
-    margin: 0 auto 16px;
+    margin: 0 auto 14px;
     font-size: 21px;
     line-height: 1.36;
   }
@@ -604,5 +733,51 @@ a {
 
   .footer-right p {
     text-align: left;
+  }
+}
+
+@media (max-width: 360px), (max-width: 979px) and (max-height: 700px) {
+  .section-content,
+  .short-content {
+    padding: 24px 20px 30px;
+  }
+
+  .product-title {
+    font-size: clamp(30px, 9vw, 34px);
+    margin-bottom: 16px;
+  }
+
+  .app-icon {
+    width: 112px;
+    height: 112px;
+    margin-bottom: 16px;
+  }
+
+  .store-link {
+    width: 150px;
+    height: 45px;
+    margin-bottom: 24px;
+  }
+
+  .store-badge {
+    width: 150px;
+    height: 45px;
+  }
+
+  .copy-heading {
+    max-width: 300px;
+    margin-bottom: 10px;
+    font-size: 19px;
+    line-height: 1.28;
+  }
+
+  .copy-body {
+    max-width: 300px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .copy-body p {
+    margin-bottom: 14px;
   }
 }
