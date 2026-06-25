@@ -365,11 +365,244 @@ a {
 }
 
 @media (max-width: 979px) {
-  body,
-  .site-header,
+  body {
+    min-width: 0;
+    overflow-x: hidden;
+  }
+
+  .site-header {
+    height: 112px;
+    min-width: 0;
+  }
+
+  .header-inner {
+    width: 100%;
+    height: 112px;
+  }
+
+  .header-logo {
+    left: 50%;
+    top: 9px;
+    width: 58px;
+    height: 58px;
+    transform: translateX(-50%);
+  }
+
+  .main-nav {
+    left: 0;
+    top: 67px;
+    width: 100%;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    gap: clamp(30px, 12vw, 76px);
+    padding: 0 18px;
+    font-size: 14px;
+    line-height: 1.35;
+  }
+
+  .main-nav a {
+    position: static;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 4px;
+  }
+
   .product-section,
-  .privacy-page,
+  .short-section,
+  .tall-section {
+    height: auto;
+    min-width: 0;
+    min-height: 0;
+    background-size: cover;
+  }
+
+  .section-content,
+  .short-content {
+    width: 100%;
+    max-width: 430px;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 46px 24px 56px;
+  }
+
+  .product-column {
+    width: 100%;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-media {
+    order: 1;
+  }
+
+  .product-copy {
+    order: 2;
+  }
+
+  .product-title,
+  .app-icon,
+  .store-link,
+  .copy-heading,
+  .copy-body {
+    position: static;
+    left: auto;
+    top: auto;
+  }
+
+  .product-title {
+    width: 100%;
+    max-width: 342px;
+    margin: 0 auto 24px;
+    font-size: clamp(34px, 9vw, 42px);
+    line-height: 1.16;
+  }
+
+  .app-icon {
+    width: 136px;
+    height: 136px;
+    margin: 0 auto 22px;
+  }
+
+  .store-link {
+    width: 160px;
+    height: 48px;
+    margin: 0 auto 34px;
+  }
+
+  .store-badge {
+    width: 160px;
+    height: 48px;
+  }
+
+  .copy-heading {
+    width: 100%;
+    max-width: 342px;
+    margin: 0 auto 16px;
+    font-size: 21px;
+    line-height: 1.36;
+  }
+
+  .copy-body {
+    width: 100%;
+    max-width: 342px;
+    margin: 0 auto;
+    font-size: 15px;
+    line-height: 1.64;
+  }
+
+  .copy-body p {
+    margin: 0 0 18px;
+  }
+
+  .copy-body p:last-child {
+    margin-bottom: 0;
+  }
+
+  .privacy-page {
+    min-width: 0;
+    min-height: 0;
+    padding: 44px 0 58px;
+    background-size: cover;
+    overflow: hidden;
+  }
+
+  .privacy-wrap {
+    width: auto;
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 24px;
+    font-size: 15px;
+    line-height: 1.66;
+  }
+
+  .privacy-wrap h1 {
+    margin: 0 0 5px;
+    font-size: 36px;
+    line-height: 1.18;
+  }
+
+  .privacy-wrap h2 {
+    margin-top: 27px;
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  .privacy-wrap ul {
+    padding-left: 21px;
+  }
+
+  .privacy-wrap li {
+    line-height: 1.66;
+  }
+
+  .privacy-wrap .effective-date {
+    margin-bottom: 28px;
+  }
+
+  .privacy-wrap p + p,
+  .privacy-wrap ul + p {
+    margin-top: 22px;
+  }
+
   .site-footer {
-    min-width: 980px;
+    height: auto;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    padding: 38px 24px 34px;
+  }
+
+  .footer-column {
+    min-height: 0;
+    position: static;
+  }
+
+  .footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 26px;
+  }
+
+  .footer-logo,
+  .footer-name,
+  .footer-phone,
+  .footer-email,
+  .footer-right p {
+    position: static;
+    left: auto;
+    top: auto;
+    right: auto;
+    width: auto;
+  }
+
+  .footer-logo {
+    width: 36px;
+    height: 38px;
+    flex: 0 0 auto;
+  }
+
+  .footer-name {
+    font-size: 19px;
+    line-height: 1.2;
+  }
+
+  .footer-phone,
+  .footer-email,
+  .footer-right p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .footer-right p {
+    text-align: left;
   }
 }
