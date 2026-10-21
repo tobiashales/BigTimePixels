@@ -310,10 +310,13 @@ a {
 }
 
 .site-footer {
-  height: 234px;
+  min-height: 284px;
   min-width: 980px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: 32px;
+  padding: 50px 84px 28px;
   background: #000;
   color: #fff;
   position: relative;
@@ -321,26 +324,84 @@ a {
 
 .footer-column {
   position: relative;
-  min-height: 234px;
+  min-width: 0;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-left: -17px;
 }
 
 .footer-logo {
-  position: absolute;
-  left: 67px;
-  top: 58px;
   width: 39px;
   height: 41px;
   object-fit: contain;
+  flex: 0 0 auto;
 }
 
 .footer-name {
-  position: absolute;
-  left: 115px;
-  top: 66px;
-  width: 258px;
   font-size: 20px;
   line-height: 1.2;
   font-weight: 700;
+}
+
+.footer-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 20px 0 16px;
+}
+
+.footer-portrait {
+  width: 48px;
+  height: 48px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.footer-profile-details {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+}
+
+.footer-person-name {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 2px;
+}
+
+.footer-socials a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 32px;
+  color: #aaa;
+}
+
+.footer-socials a:hover,
+.footer-socials a:focus-visible {
+  color: #fff;
+}
+
+.footer-socials a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.footer-socials svg {
+  width: 17px;
+  height: 17px;
 }
 
 .footer-phone,
@@ -352,23 +413,11 @@ a {
   font-weight: 600;
 }
 
-.footer-phone {
-  position: absolute;
-  left: 84px;
-  top: 145px;
-}
-
 .footer-email {
-  position: absolute;
-  left: 85px;
-  top: 178px;
+  margin-top: 5px;
 }
 
 .footer-right p {
-  position: absolute;
-  right: 115px;
-  top: 177px;
-  width: 490px;
   text-align: right;
 }
 
@@ -701,9 +750,11 @@ a {
 
   .site-footer {
     height: auto;
+    min-height: 0;
     min-width: 0;
     display: flex;
     flex-direction: column;
+    align-items: stretch;
     gap: 28px;
     padding: 38px 24px 34px;
   }
@@ -717,7 +768,7 @@ a {
     display: flex;
     align-items: center;
     gap: 12px;
-    margin-bottom: 26px;
+    margin: 0;
   }
 
   .footer-logo,
