@@ -892,3 +892,38 @@ a {
     margin-bottom: 14px;
   }
 }
+
+/* Paired store badges stay centered beneath each app icon. */
+.store-links {
+  position: absolute;
+  top: 371px;
+  left: 256px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+.store-links .store-link {
+  position: static;
+  flex: 0 0 137px;
+}
+@media (max-width: 979px) {
+  .store-links {
+    position: static;
+    transform: none;
+    justify-content: center;
+    margin: 0 auto 32px;
+  }
+  .store-links .store-link {
+    width: min(137px, calc((100vw - 56px) / 2));
+    height: auto;
+    flex: 0 1 137px;
+    margin: 0;
+  }
+  .store-links .store-badge {
+    width: 100%;
+    height: auto;
+  }
+}
+@media (max-width: 360px) {
+  .store-links { margin-bottom: 24px; }
+}
