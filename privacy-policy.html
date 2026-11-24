@@ -13,26 +13,28 @@
       }
     </script>
     <link rel="icon" type="image/png" href="assets/InstagramLogoTransparent.png">
-    <link rel="stylesheet" href="styles.css?v=20261021-footer-2">
+    <link rel="stylesheet" href="styles.css?v=20261123-header-logo">
   </head>
   <body>
     <header class="site-header">
       <div class="header-inner">
-        <nav class="main-nav" aria-label="Main navigation">
-          <a class="nav-home" href="index.html">Home</a>
-          <a class="nav-privacy active" href="privacy-policy.html" aria-current="page">Privacy Policy</a>
-        </nav>
         <a class="logo-link" href="index.html" aria-label="Big Time Pixels home">
-          <img src="assets/InstagramLogoTransparent.png" alt="Big Time Pixels" class="header-logo">
+          <img src="assets/InstagramLogoTransparent.png" alt="" class="header-logo">
         </a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="index.html#apps">Our apps</a>
+          <a href="privacy-policy.html" aria-current="page">Privacy</a>
+          <a class="nav-contact" href="index.html#footer">Contact</a>
+        </nav>
         <details class="mobile-menu">
-          <summary class="mobile-menu-toggle" aria-label="Open navigation">
-            <span aria-hidden="true">+</span>
-          </summary>
+          <summary class="mobile-menu-toggle" aria-label="Toggle navigation"><span aria-hidden="true">+</span></summary>
           <nav class="mobile-menu-panel" aria-label="Mobile navigation">
             <ul class="mobile-nav-list">
               <li><a class="mobile-nav-link" href="index.html">Home</a></li>
-              <li><a class="mobile-nav-link active" href="privacy-policy.html" aria-current="page">Privacy Policy</a></li>
+              <li><a class="mobile-nav-link" href="index.html#apps">Our apps</a></li>
+              <li><a class="mobile-nav-link" href="privacy-policy.html" aria-current="page">Privacy</a></li>
+              <li><a class="mobile-nav-link" href="index.html#footer">Contact</a></li>
             </ul>
           </nav>
         </details>
@@ -157,5 +159,6 @@
         </div>
       </div>
     </footer>
+    <script src="navigation.js" defer></script>
   </body>
 </html>
