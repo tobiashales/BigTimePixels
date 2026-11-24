@@ -48,6 +48,8 @@
     if (reviews.length) {
       const cards = document.createElement('div');
       cards.className = 'review-cards';
+      cards.tabIndex = 0;
+      cards.setAttribute('aria-label', 'Scroll through App Store reviews');
       reviews.forEach(review => {
         const card = document.createElement('article');
         card.className = 'review-card';

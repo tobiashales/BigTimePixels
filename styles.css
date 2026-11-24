@@ -1007,3 +1007,34 @@ html{scroll-behavior:smooth}.studio-hero{position:relative;overflow:hidden;backg
 /* The mark already contains the studio name. */
 .logo-link{gap:0}.header-logo{width:68px;height:68px}
 @media(max-width:979px){.header-logo{width:58px;height:58px}}
+
+/* Staggered color fields keep the hero background organic and dark. */
+.studio-hero {
+  background-image:
+    radial-gradient(ellipse at 61% 78%, rgba(21,62,30,.53), transparent 30%),
+    radial-gradient(ellipse at 39% 4%, rgba(62,9,5,.53), transparent 25%),
+    radial-gradient(ellipse at 87% 62%, rgba(45,80,90,.49), transparent 34%),
+    radial-gradient(ellipse at 13% 87%, rgba(97,28,78,.53), transparent 31%),
+    radial-gradient(ellipse at 3% 25%, rgba(21,62,30,.54), transparent 36%),
+    radial-gradient(ellipse at 76% 3%, rgba(7,0,80,.59), transparent 33%);
+  background-color: #050506;
+}
+
+/* Blend the hero into the collection and echo the background palette in the headline. */
+.studio-hero::after{content:"";position:absolute;inset:auto 0 0;height:120px;background:linear-gradient(to bottom,transparent,#000);pointer-events:none}
+.studio-hero-inner{position:relative;z-index:1}
+.studio-hero h1 span{color:#b8d9d1;background:linear-gradient(100deg,#d6c4d5 0%,#c1d9c9 48%,#b6cedd 100%);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+
+/* More room for the lower colors to blend into the page. */
+.studio-hero-inner{min-height:620px;padding-top:90px;padding-bottom:150px}
+@media(max-width:979px){.studio-hero-inner{min-height:560px;padding-top:80px;padding-bottom:130px}}
+@media(max-width:600px){.studio-hero-inner{min-height:0;padding-top:65px;padding-bottom:130px}}
+/* Keep the headline neutral so the colorful mark remains the focal point. */
+.studio-hero h1 span{background:none;color:#fff;-webkit-text-fill-color:currentColor}
+/* A soft dark pocket gives the studio mark a quieter backdrop. */
+.studio-hero{background-image:radial-gradient(ellipse 27% 48% at 75% 42%,rgba(5,5,6,.68) 0%,rgba(5,5,6,.48) 28%,rgba(5,5,6,0) 100%),radial-gradient(ellipse at 61% 78%,rgba(21,62,30,.53),transparent 30%),radial-gradient(ellipse at 39% 4%,rgba(62,9,5,.53),transparent 25%),radial-gradient(ellipse at 87% 62%,rgba(45,80,90,.49),transparent 34%),radial-gradient(ellipse at 13% 87%,rgba(97,28,78,.53),transparent 31%),radial-gradient(ellipse at 3% 25%,rgba(21,62,30,.54),transparent 36%),radial-gradient(ellipse at 76% 3%,rgba(7,0,80,.59),transparent 33%)}
+@media(max-width:600px){.studio-hero{background-image:radial-gradient(ellipse 48% 24% at 50% 22%,rgba(5,5,6,.68) 0%,rgba(5,5,6,.48) 28%,rgba(5,5,6,0) 100%),radial-gradient(ellipse at 61% 78%,rgba(21,62,30,.53),transparent 30%),radial-gradient(ellipse at 39% 4%,rgba(62,9,5,.53),transparent 25%),radial-gradient(ellipse at 87% 62%,rgba(45,80,90,.49),transparent 34%),radial-gradient(ellipse at 13% 87%,rgba(97,28,78,.53),transparent 31%),radial-gradient(ellipse at 3% 25%,rgba(21,62,30,.54),transparent 36%),radial-gradient(ellipse at 76% 3%,rgba(7,0,80,.59),transparent 33%)}}
+/* Keep animated pixels above the logo and all background layers. */
+.studio-logo-scene{isolation:isolate}.studio-logo-scene .studio-hero-logo{z-index:1}.pixel-stream{z-index:2}
+/* A partial next review invites horizontal browsing on mobile. */
+@media(max-width:560px){.review-cards{display:grid;grid-auto-flow:column;grid-auto-columns:min(84%,320px);grid-template-columns:none;gap:12px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;padding:2px 2px 12px;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.45) rgba(255,255,255,.1);-webkit-overflow-scrolling:touch}.review-card{scroll-snap-align:start}.review-cards:focus-visible{outline:2px solid #fff;outline-offset:3px}}
