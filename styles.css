@@ -928,7 +928,8 @@ a {
   .store-links { margin-bottom: 24px; }
 }
 
-.product-website-link{position:absolute;top:430px;left:256px;transform:translateX(-50%);color:#fff;font-size:14px;font-weight:600;white-space:nowrap;text-decoration:underline;text-underline-offset:4px}
-.product-website-link:hover{color:#eee}.product-website-link:focus-visible{outline:2px solid #fff;outline-offset:4px}
-@media(max-width:979px){.product-website-link{position:static;transform:none;margin:-18px auto 30px}}
-@media(max-width:360px){.product-website-link{margin:-10px auto 24px}}
+/* Color Contacts website link, aligned with the description. */
+.product-website-link{position:absolute;top:350px;left:50%;transform:translateX(-50%);display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:12px 19px;border:1px solid rgba(255,255,255,.65);border-radius:999px;background:rgba(255,255,255,.14);color:#fff;font-size:14px;font-weight:600;white-space:nowrap;text-decoration:none;transition:background .2s,border-color .2s}
+.product-website-link:hover{color:#fff;background:rgba(255,255,255,.25);border-color:#fff}.product-website-link:focus-visible{outline:2px solid #fff;outline-offset:4px}
+@media(max-width:979px){.product-website-link{position:static;transform:none;margin:22px auto 0}}
+@media(prefers-reduced-motion:reduce){.product-website-link{transition:none}}
